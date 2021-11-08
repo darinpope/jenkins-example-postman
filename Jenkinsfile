@@ -4,7 +4,7 @@ pipeline {
     stage('run collection') {
       steps {
         sh 'docker run -t postman/newman run -h'
-        sh 'docker run -t postman/newman run postman_collection.json'
+        sh 'docker run -t postman/newman run ./postman_collection.json'
       }
     }
   }
