@@ -29,7 +29,7 @@
                     "mode": "formdata",
                     "formdata": []
                 },
-                "url": "echo.getpostman.com/get",
+                "url": "https://postman-echo.com/get",
                 "description": "Similar to httpbin.org/get. Return GET data."
             },
             "response": []
@@ -56,7 +56,7 @@
                     "mode": "formdata",
                     "formdata": []
                 },
-                "url": "http://echo.getpostman.com/post",
+                "url": "https://postman-echo.com/post",
                 "description": "Returns a JSON with all the available API endpoints."
             },
             "response": [
