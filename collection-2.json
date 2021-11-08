@@ -1,0 +1,116 @@
+{
+    "info": {
+        "_postman_id": "acfe5e44-fb8e-7f06-04be-61c96821102d",
+        "name": "Jenkins demo fixed",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "GET copy",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "type": "text/javascript",
+                        "exec": [
+                            "tests[\"Body contains Host\"] = responseBody.has(\"host\");",
+                            "",
+                            "tests[\"Body contains URL\"] = responseBody.has(\"url\");",
+                            "",
+                            "console.log(data);",
+                            ""
+                        ]
+                    }
+                }
+            ],
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": []
+                },
+                "url": "echo.getpostman.com/get",
+                "description": "Similar to httpbin.org/get. Return GET data."
+            },
+            "response": []
+        },
+        {
+            "name": "Default copy",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "type": "text/javascript",
+                        "exec": [
+                            "tests[\"Body contains html\"] = responseBody.has(\"post\");",
+                            "",
+                            "",
+                            "tests[\"Response time is less than 1000ms\"] = responseTime < 1000;"
+                        ]
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": []
+                },
+                "url": "http://echo.getpostman.com/post",
+                "description": "Returns a JSON with all the available API endpoints."
+            },
+            "response": [
+                {
+                    "name": "200 OK",
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "html",
+                    "_postman_previewtype": "html",
+                    "header": [
+                        {
+                            "name": "Connection",
+                            "key": "Connection",
+                            "value": "keep-alive",
+                            "description": ""
+                        },
+                        {
+                            "name": "Content-Encoding",
+                            "key": "Content-Encoding",
+                            "value": "gzip",
+                            "description": ""
+                        },
+                        {
+                            "name": "Content-Type",
+                            "key": "Content-Type",
+                            "value": "text/html; charset=utf-8",
+                            "description": ""
+                        },
+                        {
+                            "name": "Date",
+                            "key": "Date",
+                            "value": "Tue, 11 Aug 2015 22:35:23 GMT",
+                            "description": ""
+                        },
+                        {
+                            "name": "Server",
+                            "key": "Server",
+                            "value": "nginx/1.1.19",
+                            "description": ""
+                        },
+                        {
+                            "name": "Transfer-Encoding",
+                            "key": "Transfer-Encoding",
+                            "value": "chunked",
+                            "description": ""
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": 134,
+                    "body": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv='content-type' value='text/html;charset=utf8'>\n  <title>PostmanBin</title>\n  <style type='text/css' media='all'>\n  /* style: man */\n  body#manpage {margin:0}\n  .mp {max-width:100ex;padding:0 9ex 1ex 4ex}\n  .mp p,.mp pre,.mp ul,.mp ol,.mp dl {margin:0 0 20px 0}\n  .mp h2 {margin:10px 0 0 0}\n  .mp > p,.mp > pre,.mp > ul,.mp > ol,.mp > dl {margin-left:8ex}\n  .mp h3 {margin:0 0 0 4ex}\n  .mp dt {margin:0;clear:left}\n  .mp dt.flush {float:left;width:8ex}\n  .mp dd {margin:0 0 0 9ex}\n  .mp h1,.mp h2,.mp h3,.mp h4 {clear:left}\n  .mp pre {margin-bottom:20px}\n  .mp pre+h2,.mp pre+h3 {margin-top:22px}\n  .mp h2+pre,.mp h3+pre {margin-top:5px}\n  .mp img {display:block;margin:auto}\n  .mp h1.man-title {display:none}\n  .mp,.mp code,.mp pre,.mp tt,.mp kbd,.mp samp,.mp h3,.mp h4 {font-family:monospace;font-size:14px;line-height:1.42857142857143}\n  .mp h2 {font-size:16px;line-height:1.25}\n  .mp h1 {font-size:20px;line-height:2}\n  .mp {text-align:justify;background:#fff}\n  .mp,.mp code,.mp pre,.mp pre code,.mp tt,.mp kbd,.mp samp {color:#131211}\n  .mp h1,.mp h2,.mp h3,.mp h4 {color:#030201}\n  .mp u {text-decoration:underline}\n  .mp code,.mp strong,.mp b {font-weight:bold;color:#131211}\n  .mp em,.mp var {font-style:italic;color:#232221;text-decoration:none}\n  .mp a,.mp a:link,.mp a:hover,.mp a code,.mp a pre,.mp a tt,.mp a kbd,.mp a samp {color:#0000ff}\n  .mp b.man-ref {font-weight:normal;color:#434241}\n  .mp pre {padding:0 4ex}\n  .mp pre code {font-weight:normal;color:#434241}\n  .mp h2+pre,h3+pre {padding-left:0}\n  ol.man-decor,ol.man-decor li {margin:3px 0 10px 0;padding:0;float:left;width:33%;list-style-type:none;text-transform:uppercase;color:#999;letter-spacing:1px}\n  ol.man-decor {width:100%}\n  ol.man-decor li.tl {text-align:left}\n  ol.man-decor li.tc {text-align:center;letter-spacing:4px}\n  ol.man-decor li.tr {text-align:right;float:right}\n  </style>\n  <style type='text/css' media='all'>\n  /* style: 80c */\n  .mp {max-width:106ex}\n  ul {list-style: None; margin-left: 1em!important}\n  .man-navigation {left:101ex}\n  </style>\n</head>\n\n<body id='manpage'>\n<a href=\"http://github.com/prakhar1989/Postman-demo-server\"><img style=\"position: absolute; top: 0; right: 0; border: 0;\" src=\"https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png\" alt=\"Fork me on GitHub\"></a>\n\n<div class='mp'>\n<h1>PostmanBin: Demo Service for Postman</h1>\n\n<h2 id=\"ENDPOINTS\">DEBUG ENDPOINTS</h2>\n\n<ul>\n<li><a href=\"/\" data-bare-link=\"true\"><code>/</code></a> This page.</li>\n<li><a href=\"/status\" data-bare-link=\"true\"><code>/status</code></a> Status page.</li>\n<li><a href=\"/headers\" data-bare-link=\"true\"><code>/headers</code></a> Returns header dict.</li>\n<li><a href=\"/get\" data-bare-link=\"true\"><code>/get</code></a> Returns GET data.</li>\n<li><code>/post</code> Returns POST data.</li>\n<li><a href=\"/cookies\" data-bare-link=\"true\"><code>/cookies</code></a> Returns cookie data.</li>\n<li><a href=\"/cookies/set?k1=v1&amp;k2=v2\"><code>/cookies/set?name=value</code></a> Sets one or more simple cookies.</li>\n<li><a href=\"/cookies/delete?key=k1\"><code>/cookies/delete?key=name</code></a> Deletes one or more simple cookies.</li>\n<li><a href=\"/delay/3\"><code>/delay/:n</code></a> Delays responding for <em>n</em>â€“10 seconds.</li>\n<li><a href=\"/large?type=xml&n=20\"><code>/large?type=xml&n=20</code></a> Large responses - xml/json/html/text.</li>\n<li><a href=\"/redirect-to?url=http://www.example.com\"><code>/redirect-to?url=http://example.com</code></a> Redirects to a url</li>\n<li><a href=\"/code/404\"><code>/code/404</code></a> Returns response with a user-specified status code.</li>\n<li><a href=\"/method\"><code>/method</code></a> Accepts all HTTP methods allowed by POSTMAN.</li>\n<li><a href=\"/jsonp?callback=parseResponse&name=foo&msg=hello\"><code>/jsonp?callback=parseResponse&name=foo&msg=hello</code></a> Returns jsonp.</li>\n<li><a href=\"/auth/basic\"><code>/auth/basic</code></a> Test basic auth (username: postman, password: password).</li>\n</ul>\n\n<h2 id=\"ENDPOINTS\">RESTFUL API ENDPOINTS</h2>\n\n<ul>\n<li><a href=\"/blog/posts\" data-bare-link=\"true\"><code>/blog/posts</code></a> [GET] Display all blog posts.</li>\n<li><a href=\"/blog/posts/1\" data-bare-link=\"true\"><code>/blog/posts/:id</code></a> [GET] Display one blog post.</li>\n<li><code>/blog/posts?user_id=1&amp;token=1234</code> [DELETE] Delete a blogpost.</li>\n<li><code>/blog/posts?user_id=1&amp;token=1234</code> [POST] Add a new blogpost.</li>\n<li><code>/blog/posts?user_id=1&amp;token=1234</code> [PUT] Update blogpost.</li>\n<li><a href=\"/blog/users/\" data-bare-link=\"true\"><code>/blog/users</code></a> [GET] Display all users.</li>\n<li><a href=\"/blog/users/1\" data-bare-link=\"true\"><code>/blog/users/:id</code></a> [GET] Display one user.</li>\n<li><code>/blog/users/</code></a> [POST] Register a new user.</li>\n<li><code>/blog/users/tokens</code></a> [POST] Create a new token.</li>\n</ul>\n\n<h2>COLLECTION</h2>\n<p>Postman collection with the api endpoints can be downloaded <a href='https://www.getpostman.com/collections/fc3f0598daaa5271e4f7'>here</a> and the accompanying environment json file <a href=\"https://raw.githubusercontent.com/prakhar1989/Postman-demo-server/master/postmanbin_env.json\">here</a></p>\n\n<h2>THANKS</h2>\n<p>Special thanks to <a href=\"http://httpbin.org\">httpbin</a>\n\n</div>\n</body>\n</html>"
+                }
+            ]
+        }
+    ]
+}
