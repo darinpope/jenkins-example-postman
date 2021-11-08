@@ -6,7 +6,7 @@
     },
     "item": [
         {
-            "name": "GET copy",
+            "name": "GET example",
             "event": [
                 {
                     "listen": "test",
@@ -36,7 +36,7 @@
             "response": []
         },
         {
-            "name": "Default copy",
+            "name": "POST example",
             "event": [
                 {
                     "listen": "test",
